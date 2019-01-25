@@ -1,0 +1,27 @@
+.Filter {
+  border: solid 1px #ccc;
+  display: flex;
+  flex-direction: column;
+  margin: 4px 10px;
+}
+
+.Filter .title {
+  background-color: #666;
+  color: white;
+  border-bottom: solid 1px white;
+  padding: 0.5em;
+}
+
+.Filter .content {
+  max-height: 8em;
+  overflow: scroll;
+}
+
+.Filter .content .filter-item {
+  padding: 0.1em 0.5em;
+  cursor: pointer;
+}
+
+.Filter .content .filter-item.state-o {
+  background-color: #fff;
+}

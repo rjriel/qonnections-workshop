@@ -34,6 +34,37 @@ class EnigmaService {
     return EnigmaService.instance
   }
 
+  async getList(field, options, callback) {
+    const properties = {
+      qInfo: {
+        qType: "field-list"
+      },
+      qListObjectDef: {
+        qDef: {
+          qFieldDefs: [field],
+          qSortCriterias: [{ qSortByState: 1 }, { qSortByAscii: 1 }]
+        },
+        qShowAlternatives: true,
+        // We fetch the initial three values (top + height),
+        // from the first column (left + width):
+        qInitialDataFetch: [
+          {
+            qTop: 0,
+            qHeight: 10000,
+            qLeft: 0,
+            qWidth: 1
+          }
+        ]
+      }
+    }
+
+    const listObject = await this.document.createSessionObject(properties)
+
+    if (callback) listObject.on("changed", () => callback(listObject))
+
+    await callback(listObject)
+  }
+
   async getData(properties, callback) {
     const sessionObject = await this.document.createSessionObject(properties)
 
