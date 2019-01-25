@@ -27,9 +27,9 @@ const fs = require('fs');
     const app = await qix.createAppUsingHalyard('Movies',halyard);
 
     console.log('Creating session object with movies.');
-    const movieCount = 10;
+    const reviewCount = 10;
     const properties = {
-      qInfo: { qType: 'movie-data' },
+      qInfo: { qType: 'review-data' },
       qHyperCubeDef: {
         qDimensions: [{ qDef: { qFieldDefs: ['movie_title'] } }],
         qInitialDataFetch: [{ qHeight: reviewCount, qWidth: 1 }],
@@ -37,10 +37,10 @@ const fs = require('fs');
     };
     const object = await app.createSessionObject(properties);
     const layout = await object.getLayout();
-    const movies = layout.qHyperCube.qDataPages[0].qMatrix;
+    const reviews = layout.qHyperCube.qDataPages[0].qMatrix;
 
-    console.log(`Listing the ${movieCount} first movies:`);
-    movies.forEach((movie) => { console.log(movie[0].qText); });
+    console.log(`Listing the ${reviewCount} first movies:`);
+    reviews.forEach((review) => { console.log(review[0].qText); });
 
     await session.close();
     console.log('Session closed.');
