@@ -69,6 +69,23 @@ class EnigmaService {
     await this.document.clearAll()
   }
 
+  async search(terms, fields) {
+    const searchResults = await this.document.searchResults(
+      { qSearchFields: fields },
+      terms,
+      { qOffset: 0, qCount: 20 }
+    )
+    if (searchResults.qSearchGroupArray.length > 0) {
+      return await this.document.selectAssociations(
+        { qSearchFields: fields },
+        terms,
+        0
+      )
+    } else {
+      return false
+    }
+  }
+
   async getData(properties, callback) {
     const sessionObject = await this.document.createSessionObject(properties)
 
