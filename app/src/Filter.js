@@ -27,12 +27,20 @@ class Filter extends Component {
           <div
             key={value}
             className={classes.join(" ")}
+            onClick={() => this.selectValue(value)}
           >
             {value}
           </div>
         )
       })
     this.setState({ filterList })
+  }
+
+  async selectValue(value) {
+    await EnigmaService.makeSelection(
+      this.props.field,
+      value === "<none>" ? "" : value
+    )
   }
 
   render() {
