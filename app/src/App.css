@@ -18,3 +18,10 @@
   display: flex;
   flex-wrap: wrap;
 }
+
+.Filters {
+  display: flex;
+  flex-direction: column;
+  width: 10em;
+  padding: 0.5em;
+}
