@@ -92,6 +92,8 @@ class EnigmaService {
     if (callback) sessionObject.on("changed", () => callback(sessionObject))
 
     await callback(sessionObject)
+
+    return sessionObject
   }
 
   async makeSelection(fieldName, selection) {
