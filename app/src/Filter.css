@@ -22,6 +22,19 @@
   cursor: pointer;
 }
 
+.Filter .content .filter-item.state-s {
+  background-color: #006600;
+  color: white;
+}
+
+.Filter .content .filter-item.state-a {
+  background-color: #bbb;
+}
+
 .Filter .content .filter-item.state-o {
   background-color: #fff;
+}
+
+.Filter .content .filter-item.state-x {
+  color: #999;
 }

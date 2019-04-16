@@ -72,6 +72,11 @@ class EnigmaService {
 
     await callback(sessionObject)
   }
+
+  async makeSelection(fieldName, selection) {
+    const field = await this.document.getField(fieldName)
+    await field.toggleSelect(selection)
+  }
 }
 
 const enigmaService = EnigmaService.getInstance()
