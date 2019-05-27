@@ -1,3 +1,5 @@
 .DS_Store
 
 documents
+node_modules
+.vscode
