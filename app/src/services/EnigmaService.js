@@ -65,6 +65,10 @@ class EnigmaService {
     await callback(listObject)
   }
 
+  async clearSelections() {
+    await this.document.clearAll()
+  }
+
   async getData(properties, callback) {
     const sessionObject = await this.document.createSessionObject(properties)
 
