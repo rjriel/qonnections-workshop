@@ -19,6 +19,17 @@
   flex-wrap: wrap;
 }
 
+.Main .paginate {
+  display: flex;
+  width: 85%;
+  justify-content: flex-end;
+}
+
+.Main .paginate .previous, .Main .paginate .next {
+  margin: 0.5em;
+  cursor: pointer;
+}
+
 .Filters {
   display: flex;
   flex-direction: column;
