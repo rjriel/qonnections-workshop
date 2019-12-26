@@ -1,0 +1,25 @@
+.Movie {
+  width: 20%;
+  margin: 0.5em;
+  border: solid 1px #ccc;
+  padding: 5px;
+}
+
+.Movie .title {
+  font-weight: bold;
+  margin-bottom: 1em;
+}
+
+.Movie .info {
+  display: flex;
+  flex-direction: row;
+}
+
+.Movie .info .header {
+  font-weight: bold;
+  width: 33%;
+}
+
+.Movie .info .content {
+  width: 67%;
+}

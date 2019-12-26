@@ -33,6 +33,14 @@ class EnigmaService {
     }
     return EnigmaService.instance
   }
+
+  async getData(properties, callback) {
+    const sessionObject = await this.document.createSessionObject(properties)
+
+    if (callback) sessionObject.on("changed", () => callback(sessionObject))
+
+    await callback(sessionObject)
+  }
 }
 
 const enigmaService = EnigmaService.getInstance()

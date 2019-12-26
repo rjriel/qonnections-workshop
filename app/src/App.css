@@ -11,3 +11,10 @@
   height: 10em;
   flex-grow: 1;
 }
+
+.Main {
+  flex-grow: 1;
+  padding: 10px;
+  display: flex;
+  flex-wrap: wrap;
+}
